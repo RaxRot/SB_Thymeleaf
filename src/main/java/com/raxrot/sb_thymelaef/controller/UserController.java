@@ -20,4 +20,14 @@ public class UserController {
         model.addAttribute("user", user);
         return "selection-exp";
     }
+
+    @GetMapping("message-exp")
+    public String messageExp() {
+        return "message-exp";
+    }
+
+    @GetMapping("link-exp")
+    public String linkExp() {
+        return "link-exp";
+    }
 }
