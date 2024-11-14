@@ -49,6 +49,14 @@ public class UserController {
         return "if";
     }
 
+    @GetMapping("switch")
+    public String switchExp(Model model) {
+        List<User> users = getUsers();
+        model.addAttribute("users", users);
+        return "switch";
+    }
+
+
     private static List<User> getUsers() {
         User user = new User("Vlad","das@gmail.com","ADMIN","male");
         User user1= new User("Daria","adeaw@gmail.com","Lol","female");
