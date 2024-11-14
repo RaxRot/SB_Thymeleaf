@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class UserController {
     @GetMapping("variable-exp")
@@ -29,5 +32,18 @@ public class UserController {
     @GetMapping("link-exp")
     public String linkExp() {
         return "link-exp";
+    }
+
+    @GetMapping("/users")
+    public String users(Model model) {
+        User user = new User("Vlad","das@gmail.com","ADMIN","male");
+        User user1= new User("Daria","adeaw@gmail.com","Lol","female");
+        User user2=new User("Oleg","defawf@gmail.com","lox","male");
+        List<User> users = new ArrayList<User>();
+        users.add(user);
+        users.add(user1);
+        users.add(user2);
+        model.addAttribute("users", users);
+        return "users";
     }
 }
