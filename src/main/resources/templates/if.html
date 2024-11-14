@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a th:href="www.gmail.com" th:if="${users.get(0).name=='Vlad'}">Update</a>
+<a th:href="www.gmail.com" th:unless="${users.get(0).name=='Vlad'}">Lol</a>
+
+<a th:href="www" th:if="${users.get(0).name=='Roma'}">Update</a>
+<a th:href="222" th:unless="${users.get(0).name=='Roma'}">No enter</a>
+</body>
+</html>

@@ -36,6 +36,20 @@ public class UserController {
 
     @GetMapping("/users")
     public String users(Model model) {
+        List<User> users = getUsers();
+        model.addAttribute("users", users);
+        return "users";
+    }
+
+
+    @GetMapping("if")
+    public String ifExp(Model model) {
+        List<User> users = getUsers();
+        model.addAttribute("users", users);
+        return "if";
+    }
+
+    private static List<User> getUsers() {
         User user = new User("Vlad","das@gmail.com","ADMIN","male");
         User user1= new User("Daria","adeaw@gmail.com","Lol","female");
         User user2=new User("Oleg","defawf@gmail.com","lox","male");
@@ -43,7 +57,6 @@ public class UserController {
         users.add(user);
         users.add(user1);
         users.add(user2);
-        model.addAttribute("users", users);
-        return "users";
+        return users;
     }
 }
